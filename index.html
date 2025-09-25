@@ -220,6 +220,31 @@
         <div class="container">
             <h2 class="section-title reveal-element" data-animation="fade-in-top">Project Terkini</h2>
             <div class="projects-grid">
+                
+                <div class="project-card reveal-element" data-animation="fade-in-up">
+                    <div class="project-image-wrapper">
+                        <img src="img/mje.png" alt="Muhammadiyah Jogja Expo Information System" class="project-image optional-image">
+                        <div class="project-image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistem Informasi Muhammadiyah Jogja Expo</h3>
+                        <p>Sistem informasi berbasis web untuk pengelolaan acara, registrasi peserta, manajemen booth, dan penyediaan informasi jadwal serta lokasi acara Muhammadiyah Jogja Expo. Bertujuan untuk mempermudah panitia dan meningkatkan pengalaman pengunjung.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Fullstack Dev</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Tailwindcss</span>
+                            <span class="tech-tag">QR Code Gen</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Novallias2200018083/SistemMJE" target="_blank" class="project-link secondary-link">GitHub Repo <i class="fab fa-github"></i></a>
+                            <a href="http://muhammadiyahjogjaexpo.com/" target="_blank" class="project-link primary-link">Lihat Demo <i class="fas fa-external-link-alt"></i></a>
+                            <button class="project-link primary-link view-detail-btn" data-project-id="mje">Lihat Detail <i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="project-card reveal-element" data-animation="fade-in-up">
                     <div class="project-image-wrapper">
                         <img src="img/gout1.png" alt="E-commerce Platform Project" class="project-image optional-image">
@@ -245,6 +270,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card reveal-element" data-animation="fade-in-up" data-delay="0.1">
                     <div class="project-image-wrapper">
                         <img src="img/catering1.png" alt="AI Chatbot Service Project" class="project-image optional-image">
@@ -883,6 +909,14 @@
         // Data proyek (ini akan menjadi sumber data untuk modal Anda)
         // Anda bisa memindahkan ini ke file JS terpisah (misalnya projectsData.js)
         const projectsData = {
+            "mje": {
+                title: "Sistem Informasi Manajemen Muhammadiyah Jogja Expo", 
+                description: "Sistem informasi berbasis web untuk mengelola pendaftaran peserta, manajemen booth pameran, dan publikasi jadwal serta informasi acara Muhammadiyah Jogja Expo secara terpusat. Sistem ini bertujuan untuk mempermudah koordinasi panitia, mempercepat proses registrasi pengunjung dan peserta, serta menyediakan platform informasi yang interaktif bagi publik. Fitur utama mencakup: Modul Registrasi Online, Manajemen Data Booth/Tenant, Jadwal Acara Dinamis, Peta Lokasi Interaktif, dan Laporan Kehadiran.",
+                images: ["img/mje1.png", "img/mje2.png", "img/mje3.png"], 
+                tech: ["Fullstack Dev", "Laravel", "Php", "MySQL", "Bootstrap/Tailwindcss", "QR Code Generation"],
+                github: "#", 
+                liveDemo: "#"
+            },
             "goutcare": {
                 title: "GoutCare",
                 description: "Sistem Cerdas (AI) Berbasis Web yang dikembangkan untuk penderita penyakit asama urat untuk membantu dalam pemilihan makanan (rekomendasi) guna menghindari tingginya kadar asam urat serta menjadi platform edukasi gout bagi penderita asam urat. Sistem ini dikembangkan dengan metode SPK SAW dan Profile Matching. Fitur utamanya mencakup: rekomendasi makanan berdasarkan profil kesehatan pengguna, database makanan lengkap dengan kadar purin, artikel edukasi tentang gout, dan fitur pelacakan pola makan.",
@@ -1070,3 +1104,4 @@
     </script>
 </body>
 </html>
+
