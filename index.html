@@ -41,7 +41,6 @@
             overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi */
         }
 
-        /* FIX: Styling tombol "Lihat Detail" agar lebih terlihat */
         .project-links .view-detail-btn {
             background-color: #333; /* Memberi latar belakang solid */
             color: #fff;
@@ -584,7 +583,8 @@
                         <div class="project-links">
                              <a href="#" class="project-link secondary-link disabled-link">Project Tim (Private) <i class="fab fa-github"></i></a>
                              <a href="#" class="project-link primary-link disabled-link">40% Progress</a>
-                             <button class="project-link view-detail-btn" data-project-id="e-beautetox">Lihat Detail <i class="fas fa-info-circle"></i></button> </div>
+                             <button class="project-link view-detail-btn" data-project-id="e-beautetox">Lihat Detail <i class="fas fa-info-circle"></i></button>
+                        </div>
                     </div>
                 </div>
 
@@ -602,12 +602,15 @@
                         <div class="project-links">
                             <a href="#" class="project-link secondary-link disabled-link">Project Tim (Private) <i class="fab fa-github"></i></a>
                             <a href="#" class="project-link primary-link disabled-link">40% Progress</a>
-                            <button class="project-link view-detail-btn" data-project-id="bdp-company">Lihat Detail <i class="fas fa-info-circle"></i></button> </div>
+                            <button class="project-link view-detail-btn" data-project-id="bdp-company">Lihat Detail <i class="fas fa-info-circle"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> <section class="services" id="services">
+    </section>
+    
+    <section class="services" id="services">
         <div class="container">
             <h2 class="section-title reveal-element" data-animation="fade-in-top">Layanan Saya</h2>
             <div class="services-grid">
@@ -774,7 +777,6 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Data proyek (sumber data untuk modal)
             const projectsData = {
                 "mje": {
                     title: "Sistem Informasi Manajemen Muhammadiyah Jogja Expo",
@@ -863,8 +865,7 @@
                     tech: ["Java", "Kotlin", "Firebase", "MySQL", "Android SDK", "REST API", "Android Studio"],
                     github: "#",
                     liveDemo: "#"
-                }
-
+                }, /* FIX: Menambahkan koma yang hilang */
                 "e-beautetox": {
                     title: "E-commerce Beautetox",
                     description: "Pengembangan platform e-commerce untuk Beautetox, merek perawatan tubuh lokal Indonesia yang terkenal dengan inovasi lulur tanpa bilasnya.",
@@ -872,19 +873,17 @@
                     tech: ["FullStack Dev", "Laravel", "Php", "MySQL", "Typescript", "REST API", "Javascript, dll"],
                     github: "#",
                     liveDemo: "#"
-                }
-
+                }, /* FIX: Menambahkan koma yang hilang */
                 "bdp-company": {
-                        title: "Sistem Informasi Perusahaan Buharum Daya Perkasa",
-                        description: "Pengembangan website company profile dan sistem internal untuk PT Buharum Daya Perkasa, sebuah perusahaan yang berlokasi di Yogyakarta.",
-                        images: ["img/bdp1.jpg", "img/bdp2.jpg", "img/bdp3.jpg"],
-                        tech: ["Project Manager", "Fullstack Dev", "Laravel", "Php", "MySQL", "REST API", "Tailwind CSS", "React JS (JSX)"],
-                        github: "#",
-                        liveDemo: "#"
-                    }
+                    title: "Sistem Informasi Perusahaan Buharum Daya Perkasa",
+                    description: "Pengembangan website company profile dan sistem internal untuk PT Buharum Daya Perkasa, sebuah perusahaan yang berlokasi di Yogyakarta.",
+                    images: ["img/bdp1.jpg", "img/bdp2.jpg", "img/bdp3.jpg"],
+                    tech: ["Project Manager", "Fullstack Dev", "Laravel", "Php", "MySQL", "REST API", "Tailwind CSS", "React JS (JSX)"],
+                    github: "#",
+                    liveDemo: "#"
+                }
             };
 
-            // MODAL LOGIC
             const modal = document.getElementById('projectDetailModal');
             const closeButton = document.querySelector('.close-button');
             const viewDetailButtons = document.querySelectorAll('.view-detail-btn');
@@ -945,7 +944,6 @@
                 document.body.style.overflow = 'auto';
             }
 
-            // FIX: Menggunakan 'button' dari forEach loop, bukan event.target
             viewDetailButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const projectId = button.dataset.projectId;
@@ -960,7 +958,6 @@
                 }
             });
 
-            // ADDED: CONTACT FORM LOGIC
             const contactForm = document.getElementById('contactForm');
             contactForm.addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -970,16 +967,12 @@
                 const message = document.getElementById('message').value;
                 const whatsappNumber = this.dataset.whatsappNumber;
                 
-                // Format pesan untuk WhatsApp
                 const formattedMessage = `Halo Noval, perkenalkan saya *${name}*.\n\n*Subjek:*\n${subject}\n\n*Pesan:*\n${message}\n\n---`;
-
                 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
 
-                // Buka WhatsApp di tab baru
                 window.open(whatsappUrl, '_blank');
             });
         });
     </script>
 </body>
 </html>
-
